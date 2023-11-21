@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial/responsive/breakpoint.dart';
 import 'package:tutorial/responsive/responsive_center.dart';
+import 'package:tutorial/signin.dart';
 
 class Layout extends StatelessWidget {
   const Layout({super.key});
@@ -8,11 +9,12 @@ class Layout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Center Responsive')),
-      body: ResponsiveCenter(
-          child: child,
-          maxContentWidth: BreakPoint.deskTop,
-          padding: EdgeInsets.all(16)),
+      appBar: AppBar(title: const Text('Center Responsive')),
+      body: const ResponsiveCenter(
+        maxContentWidth: BreakPoint.tablet,
+        padding: EdgeInsets.all(16),
+        child: SignIn(),
+      ),
     );
   }
 }
